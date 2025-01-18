@@ -25,30 +25,31 @@
     </header>
 
     <!-- Главный баннер -->
-    <section class="bg-light py-5 text-center">
+    <section class="bg-light d-flex justify-content-center align-items-center text-center" style="height: 100vh;">
         <div class="container">
             <h2 class="display-4">Добро пожаловать в CodemastersPRO!</h2>
             <p class="lead mt-3">Школа программирования, которая поможет вам стать мастером кода.</p>
             <a href="#courses" class="btn btn-primary btn-lg mt-4">Посмотреть курсы</a>
         </div>
     </section>
+    
 
     <!-- О нас -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5 d-flex align-items-center" style="min-height: 100vh;">
         <div class="container">
             <h2 class="text-center mb-4">Почему выбирают нас?</h2>
-            <div class="row">
-                <div class="col-md-4 text-center">
+            <div class="row text-center">
+                <div class="col-md-4">
                     <img src="https://via.placeholder.com/100" alt="Иконка" class="mb-3">
                     <h5>Опытные преподаватели</h5>
                     <p>Наши преподаватели - профессионалы с многолетним опытом работы в IT.</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-4">
                     <img src="https://via.placeholder.com/100" alt="Иконка" class="mb-3">
                     <h5>Современные курсы</h5>
                     <p>Мы предлагаем актуальные программы обучения для начинающих и продвинутых студентов.</p>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-4">
                     <img src="https://via.placeholder.com/100" alt="Иконка" class="mb-3">
                     <h5>Гарантия трудоустройства</h5>
                     <p>Мы помогаем нашим студентам найти работу после окончания обучения.</p>
@@ -58,13 +59,13 @@
     </section>
 
     <!-- Курсы -->
-    <section id="courses" class="bg-light py-5">
+    <section id="courses" class="bg-light py-5 d-flex align-items-center" style="min-height: 100vh;">
         <div class="container">
             <h2 class="text-center mb-4">Наши курсы</h2>
             <div class="row">
                 {% for course in courses %}
-                <div class="col-md-4">
-                    <div class="card">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
                         <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ course.title }}</h5>
@@ -79,17 +80,17 @@
     </section>
 
     <!-- Отзывы -->
-    <section id="reviews" class="py-5">
+    <section id="reviews" class="py-5 d-flex align-items-center" style="min-height: 100vh;">
         <div class="container">
             <h2 class="text-center mb-4">Отзывы наших студентов</h2>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <blockquote class="blockquote">
                         <p>"Курсы CodemastersPRO помогли мне устроиться на работу моей мечты! Спасибо преподавателям за отличное обучение."</p>
                         <footer class="blockquote-footer">Анна, студентка курса "Python для анализа данных"</footer>
                     </blockquote>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-4">
                     <blockquote class="blockquote">
                         <p>"Отличная школа с профессиональным подходом. После курсов по Web-разработке я смог создать свой первый сайт!"</p>
                         <footer class="blockquote-footer">Иван, студент курса "Web-разработка"</footer>
@@ -100,13 +101,14 @@
     </section>
 
     <!-- Контакты -->
-    <section id="contact" class="bg-dark text-white py-5">
+    <section id="contact" class="bg-dark text-white py-5 d-flex align-items-center" style="min-height: 100vh;">
         <div class="container text-center">
             <h2 class="mb-4">Свяжитесь с нами</h2>
             <p>Email: sagaydack@gmail.com</p>
             <p>Телефон: +7 (777) 332-36-76</p>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-primary text-white text-center py-3">
