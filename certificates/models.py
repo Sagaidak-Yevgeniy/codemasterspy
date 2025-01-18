@@ -26,7 +26,7 @@ class Certificate(models.Model):
         super().save(*args, **kwargs)  # Сначала сохраняем объект
 
         # Генерация полного URL
-        full_url = f"http://127.0.0.1:8000{self.get_absolute_url()}"
+        full_url = f"https://codemasterspy-git-main-yevgeniys-projects-9a9cdb4d.vercel.app/{self.get_absolute_url()}"
 
         # Создание QR-кода
         qr = qrcode.QRCode(
