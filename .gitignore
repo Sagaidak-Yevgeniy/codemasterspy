@@ -1,0 +1,16 @@
+# Ignore virtual environment
+.venv/
+env/
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore .DS_Store on macOS
+.DS_Store
+
+# Ignore other unwanted files
+*.log
+*.sqlite3
