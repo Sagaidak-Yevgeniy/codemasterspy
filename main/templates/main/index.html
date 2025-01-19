@@ -8,32 +8,88 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- AOS CSS for animations -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        header {
+            background: #0d6efd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header .navbar-brand {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white !important;
+        }
+        header .nav-link {
+            color: white !important;
+            font-size: 1.2rem;
+            margin-left: 1rem;
+        }
+        .hero-section {
+            background: linear-gradient(to right, rgba(0, 123, 255, 0.6), rgba(102, 16, 242, 0.6)), url('media/baner/main1.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+        }
+        .hero-section .btn {
+            background: #ffc107;
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        .hero-section .btn:hover {
+            background: #e0a800;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+        .feature-card img {
+            width: 70px;
+            height: 70px;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background: #212529;
+            color: #ccc;
+        }
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        .navbar-toggler-icon {
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
-
     <!-- Шапка -->
-    <header class="bg-primary text-white py-4">
+    <header class="py-3 sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav class="navbar navbar-expand-lg">
                 <a class="navbar-brand" href="#">CodemastersPRO</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#courses">Курсы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#reviews">Отзывы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Контакты</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#courses">Курсы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Контакты</a></li>
                     </ul>
                 </div>
             </nav>
@@ -41,45 +97,52 @@
     </header>
 
     <!-- Главный баннер -->
-    <section class="bg-light d-flex justify-content-center align-items-center text-center" style="height: 100vh;" data-aos="fade-up">
+    <section class="hero-section position-relative text-center text-white py-5">
         <div class="container">
-            <h2 class="display-4">Добро пожаловать в CodemastersPRO!</h2>
-            <p class="lead mt-3">Школа программирования, которая поможет вам стать мастером кода.</p>
-            <a href="#courses" class="btn btn-primary btn-lg mt-4">Посмотреть курсы</a>
+            <h1 class="display-4 fw-bold mb-4" data-aos="fade-up">Будущее за кодом</h1>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="300" style="font-size: 1.25rem;">Погрузитесь в мир IT вместе с CodemastersPRO. Мы готовим профессионалов для современного цифрового мира.</p>
+            <a href="#courses" class="btn btn-lg shadow-lg px-4 py-2" data-aos="fade-up" data-aos-delay="600">Начать обучение</a>
         </div>
     </section>
 
+
     <!-- О нас -->
-    <section id="about" class="py-5 d-flex align-items-center" style="min-height: 80vh;" data-aos="fade-right">
+    <section id="about" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Почему выбирают нас?</h2>
+            <h2 class="text-center fw-bold mb-5">Почему выбирают нас?</h2>
             <div class="row text-center">
-                <div class="col-md-4">
-                    <img src="media/about/expert.jpg" alt="Иконка" class="mb-3 card-img-top">
-                    <h5>Опытные преподаватели</h5>
-                    <p>Наши преподаватели - профессионалы с многолетним опытом работы в IT.</p>
+                <div class="col-md-4 feature-card">
+                    <div class="mb-3">
+                        <i class="bi bi-person-check-fill fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Опытные преподаватели</h5>
+                    <p>Только профессионалы с реальным опытом работы в ведущих IT-компаниях.</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="media/about/modern.jpg" alt="Иконка" class="mb-3 card-img-top">
-                    <h5>Современные курсы</h5>
-                    <p>Мы предлагаем актуальные программы обучения для начинающих и продвинутых студентов.</p>
+                <div class="col-md-4 feature-card">
+                    <div class="mb-3">
+                        <i class="bi bi-laptop fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Современные курсы</h5>
+                    <p>Погружение в тренды индустрии, включая AI, Web-разработку и анализ данных.</p>
                 </div>
-                <div class="col-md-4">
-                    <img src="media/about/job.jpg" alt="Иконка" class="mb-3 card-img-top">
-                    <h5>Гарантия трудоустройства</h5>
-                    <p>Мы помогаем нашим студентам найти работу после окончания обучения.</p>
+                <div class="col-md-4 feature-card">
+                    <div class="mb-3">
+                        <i class="bi bi-briefcase-fill fs-1"></i>
+                    </div>
+                    <h5 class="fw-bold">Гарантия трудоустройства</h5>
+                    <p>Мы готовим к карьере в топовых компаниях. Ваш успех — наша цель.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Курсы -->
-    <section id="courses" class="bg-light py-5 d-flex align-items-center" style="min-height: 80vh;" data-aos="fade-up">
+    <section id="courses" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Наши курсы</h2>
-            <div class="row">
+            <h2 class="text-center fw-bold mb-5">Популярные курсы</h2>
+            <div class="row g-4">
                 {% for course in courses %}
-                <div class="col-md-4 mb-4" data-aos="flip-left">
+                <div class="col-md-4">
                     <div class="card h-100">
                         <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
                         <div class="card-body">
@@ -95,59 +158,49 @@
     </section>
 
     <!-- Отзывы -->
-    <section id="reviews" class="py-5 d-flex align-items-center" style="min-height: 80vh;" data-aos="fade-left">
+    <section id="reviews" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Отзывы наших студентов</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <blockquote class="blockquote">
-                        <p>"Курсы CodemastersPRO помогли мне устроиться на работу моей мечты! Спасибо преподавателям за отличное обучение."</p>
-                        <footer class="blockquote-footer">Алиша, студентка курса "Python для анализа данных"</footer>
-                    </blockquote>
+            <h2 class="text-center fw-bold mb-5">Отзывы студентов</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-4 bg-white rounded shadow">
+                        <p>"Курсы CodemastersPRO помогли мне получить работу мечты!"</p>
+                        <p class="blockquote-footer">Денис, Python-разработчик</p>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <blockquote class="blockquote">
-                        <p>"Отличная школа с профессиональным подходом. После курсов по Web-разработке я смог создать свой первый сайт!"</p>
-                        <footer class="blockquote-footer">Ахмет, студент курса "Web-разработка"</footer>
-                    </blockquote>
+                <div class="col-md-6">
+                    <div class="p-4 bg-white rounded shadow">
+                        <p>"Благодаря этим курсам я стал веб-разработчиком. Спасибо!"</p>
+                        <p class="blockquote-footer">Ахмет, Web-разработчик</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Контакты -->
-    <section id="contact" class="bg-dark text-white py-5 d-flex align-items-center" style="min-height: 80vh;" data-aos="zoom-in">
+    <section id="contact" class="py-5 bg-dark text-white">
         <div class="container text-center">
-            <h2 class="mb-4 fs-1 fs-md-3">Свяжитесь с нами</h2>
-            <p class="fs-3 fs-md-5">Адрес: г. Павлодар, ул. Бекмаханова 115/2</p>
-            <p class="fs-4 fs-md-6">Email: <a href="mailto:user84447052+1527omcliuot5y1xzkq9@boards.trello.com" class="text-decoration-none">sagaydack@gmail.com</a></p>
-            <p class="fs-4 fs-md-6">WhatsApp: <a href="tel:+77773323676" class="text-decoration-none">7 (777) 332-36-76</a></p>
+            <h2 class="mb-4">Свяжитесь с нами</h2>
+            <p>Адрес: г. Павлодар, ул. Бекмаханова 115/2</p>
+            <p>Email: <a href="mailto:sagaydack@gmail.com" class="text-warning">sagaydack@gmail.com</a></p>
+            <p>WhatsApp: <a href="tel:+77773323676" class="text-warning">+7 (777) 332-36-76</a></p>
         </div>
     </section>
-    
 
     <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3">
+    <footer class="py-3 text-center">
         <p>&copy; 2025 CodemastersPRO. Все права защищены.</p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS for animations -->
+    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        // Initialize AOS animations
-        AOS.init({
-            duration: 1200, // Duration for animations
-            once: false, // Trigger animation both when scrolling down and up
-        });
-
-       
-
+        AOS.init({ duration: 1200 });
     
+ 
     </script>
-
-  
-
 </body>
 </html>
