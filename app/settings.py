@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from urllib.parse import urlparse
 import os
 
 
@@ -86,12 +87,25 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
+
+# Извлекаем строку подключения из переменной окружения или напрямую
+DATABASE_URL = os.getenv('DATABASE_URL', 'postgresql://postgres:JFZeYJFxIalanWfsiyYFDkWYuMryLyBb@junction.proxy.rlwy.net:41729/railway')
+
+# Разбираем строку подключения
+url = urlparse(DATABASE_URL)
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': url.path[1:],  # Имя базы данных (убираем первый слэш)
+        'USER': url.username,
+        'PASSWORD': url.password,
+        'HOST': url.hostname,
+        'PORT': url.port,
     }
 }
+
 
 
 # Password validation
